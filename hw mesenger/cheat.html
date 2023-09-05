@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CHAT WINDOW</title>
+    <style>
+      body {
+        background-color: #333;
+        width: 350px;
+        display: flex;
+      }
+      .chat-window {
+        font-family: Arial;
+        color: white;
+        margin: 20px;
+      }
+      .chat-window header {
+        height: 60px;
+      }
+      .chat-window section {
+        height: 500px;
+        background-color: rgb(255, 255, 255);
+        overflow: hidden;
+        overflow-y: scroll;
+      }
+      .chat-window section::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      .chat-window .message-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .chat-window .message-me {
+        text-align: right;
+      }
+      .chat-window .message-list p {
+        margin: 5px;
+        display: inline-block;
+        padding: 10px;
+        vertical-align: top;
+      }
+      .chat-window .message-me p {
+        background-image: linear-gradient(
+          rgb(48, 44, 255),
+          rgb(48, 44, 255),
+          rgb(202, 52, 255)
+        );
+        color: white;
+        border-radius: 20px 20px 0px 20px;
+      }
+      .chat-window .message-you p {
+        background-color: rgb(223, 223, 223);
+        color: black;
+        border-radius: 20px 20px 20px 0px;
+      }
+
+      .chat-window .message-list img {
+        width: 40px;
+      }
+      .chat-window footer {
+        height: 60px;
+      }
+      .typing span:nth-child(1) {
+        animation: appear 1s infinite;
+      }
+      .typing span:nth-child(2) {
+        animation: appear 1s infinite 0.2s;
+      }
+      .typing span:nth-child(3) {
+        animation: appear 1s infinite 0.3s;
+      }
+      @keyframes appear {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .emoji {
+        font-size: 30px;
+        line-height: 0px;
+        margin-bottom: 15px;
+      }
+      .controls {
+        background-color: aliceblue;
+        text-align: left;
+        padding-top: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+      .controls button img {
+        width: 30px;
+      }
+      .controls button,
+      .controls input {
+        margin-top: 15px;
+        display: inline-block;
+        vertical-align: middle;
+
+        border-radius: 20px;
+        border-color: aliceblue;
+      }
+      .controls input {
+        height: 35px;
+        width: 140px;
+        border: none;
+        transform: translateY(-4px);
+        background-color: rgb(223, 223, 223);
+        padding-left: 10px;
+      }
+      button {
+        background: none;
+        border: none;
+        padding: 0 0 0 2px;
+        cursor: pointer;
+      }
+      .input-smile {
+        transform: translateX(265px) translateY(-34px);
+        display: inline-block;
+      }
+      .header {
+        background-color: aliceblue;
+        padding-top: 5px;
+      }
+      .header img {
+        width: 40px;
+      }
+      h4 {
+        display: inline-block;
+        color: rgb(44, 44, 44);
+        transform: translateY(-20px);
+      }
+      .header p {
+        display: block;
+        color: rgb(44, 44, 44);
+        font-size: smaller;
+        transform: translateY(-55px) translateX(45px);
+      }
+      .header-controls img {
+        width: 25px;
+      }
+      .header-controls .close {
+        transform: translateY(-95px) translateX(275px);
+      }
+      .hide {
+        transform: translateY(-95px) translateX(215px);
+      }
+      .video-call {
+        transform: translateY(-95px) translateX(150px);
+      }
+      .call {
+        transform: translateY(-95px) translateX(85px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-window">
+      <header class="header">
+        <div>
+          <img src="img/avatar-you.svg" />
+          <h4>Maria Mirabela</h4>
+          <p>Activ(ă) acum</p>
+        </div>
+        <div>
+          <button class="header-controls">
+            <img src="img/close_FILL0_wght400_GRAD0_opsz24.svg" class="close" />
+          </button>
+          <button class="header-controls">
+            <img src="img/remove_FILL0_wght400_GRAD0_opsz24.svg" class="hide" />
+          </button>
+          <button class="header-controls">
+            <img
+              src="img/video_camera_back_FILL0_wght400_GRAD0_opsz24.svg"
+              class="video-call"
+            />
+          </button>
+          <button class="header-controls">
+            <img src="img/call_FILL0_wght400_GRAD0_opsz24.svg" class="call" />
+          </button>
+        </div>
+      </header>
+      <section>
+        <ol class="message-list">
+          <li class="message-me">
+            <img src="" />
+            <p>Hi there!</p>
+          </li>
+
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p>Aloha!</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <p>How are you? :)</p>
+          </li>
+
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p>Doing good!</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <p>Great!</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <div class="emoji">💪🤙</div>
+          </li>
+
+          <!---------------------------------------------------------->
+          <li class="message-me">
+            <img src="" />
+            <p>let's have a drink 🥂</p>
+          </li>
+
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p>Ok</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <p>Come to my place :)</p>
+          </li>
+
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p>I'll be there at 8 p.m</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <p>Great!</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <div class="emoji">🙃😎</div>
+          </li>
+
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p>I will come with my mother🤣</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <p>Sorry, I have to go at work urgently☹️</p>
+          </li>
+
+          <li class="message-me">
+            <img src="" />
+            <p>bye bye...</p>
+          </li>
+
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p>😕😕😕</p>
+          </li>
+
+          <!------------------------------------------------------------->
+          <li class="message-you">
+            <img src="img/avatar-you.svg" />
+            <p class="typing">
+              <span>●</span>
+              <span>●</span>
+              <span>●</span>
+            </p>
+          </li>
+        </ol>
+      </section>
+      <footer class="controls">
+        <button>
+          <img src="img/add_circle_FILL0_wght400_GRAD0_opsz24.svg" />
+        </button>
+        <button>
+          <img src="img/photo_library_FILL0_wght400_GRAD0_opsz24.svg" />
+        </button>
+        <button>
+          <img src="img/account_box_FILL0_wght400_GRAD0_opsz24.svg" />
+        </button>
+        <button>
+          <img src="img/gif_box_FILL0_wght400_GRAD0_opsz24.svg" />
+        </button>
+        <label>
+          <input type="text" placeholder="Aa" />
+          <img
+            src="img/sentiment_satisfied_FILL0_wght400_GRAD0_opsz24.svg"
+            class="input-smile"
+          />
+        </label>
+      </footer>
+    </div>
+  </body>
+</html>
